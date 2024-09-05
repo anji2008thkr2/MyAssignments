@@ -27,7 +27,7 @@ public class Testcase1 {
 		By tommDt=By.xpath("//ul/li/span[contains(text(),'Tomorrow')]");
 		By movieDrpDwn=By.xpath("//div[@id='movie']");
 		By selectMovie=By.xpath("//li/span[text()='STREE 2 SARKATE KA AATANK']");
-		By selectTime=By.xpath("(//span[contains(text(),'10:50 PM')])[1]");
+		By selectTime=By.xpath("(//span[contains(text(),'10:40 PM')])[1]");
 		By bookbtn=By.xpath("//span[text()='Book']");
 		By accept=By.xpath("//button[text()='Accept']");
 		By selectSeat=By.xpath("(//td/span[text()='3'])[1]");
@@ -65,18 +65,18 @@ public class Testcase1 {
 		
 		Actions act = new Actions(driver);
 		WebElement proceedClick=wait.until(ExpectedConditions.elementToBeClickable(proceed));
-		act.click(proceedClick);
+		act.click(proceedClick).perform();
 		
 		WebElement proceedClickAgain=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div/button[contains(@class,btn-proceeded) and text()='Proceed']")));
-		new Actions(driver).click(proceedClickAgain);
+		new Actions(driver).click(proceedClickAgain).perform();
 		
 		WebElement proceedClickAgain_1=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div/button[contains(@class,btn-proceeded) and text()='Proceed']")));
-		new Actions(driver).click(proceedClickAgain_1);
+		new Actions(driver).click(proceedClickAgain_1).perform();
 		
 		//wait.until(ExpectedConditions.presenceOfElementLocated(proceed)).click();
 		
         WebElement closeIconAler=wait.until(ExpectedConditions.elementToBeClickable(closeIcon));
-		act.click(closeIconAler);
+		act.click(closeIconAler).perform();
 		
         System.out.println("Title -"+ driver.getTitle());
 
