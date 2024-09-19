@@ -3,6 +3,7 @@ package week2.day2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 
 import dev.failsafe.internal.util.Assert;
 
@@ -13,9 +14,11 @@ public class FacebookLogin {
 		
 		ChromeDriver driver=new ChromeDriver();
 		driver.get("https://www.facebook.com/");
+		Actions action=new Actions(driver);
 		
 		WebElement email=driver.findElement(By.id("email"));
-		email.sendKeys("testleaf.2023@gmail.com");
+		action.moveToElement(email).contextClick().sendKeys("testleaf.2023@gmail.com").perform();
+		//email.sendKeys("testleaf.2023@gmail.com");
 		
 		WebElement password=driver.findElement(By.id("pass"));
 		password.sendKeys("Tuna@321");
